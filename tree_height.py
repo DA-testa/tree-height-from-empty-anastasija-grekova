@@ -19,14 +19,11 @@ def main():
     check = input()
     check = check.replace("\r","")
     check = check.replace("\n","")
-    print("-"+check+"-")
+    #print("-"+check+"-")
     if check == 'I':
-        print("in")
         n = int(input())
-        print(n)
         parents = list(map(int, input().split()))
-        print(parents)
-        #print(compute_height(n, parents))
+        print(compute_height(n, parents))
 
     if check == 'F':
         path = os.getcwd() + '/test'
