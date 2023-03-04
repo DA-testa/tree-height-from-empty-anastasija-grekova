@@ -20,8 +20,10 @@ def main():
     #print(check)
     if check == 'I':
         n = int(input())
+        print(n)
         parents = list(map(int, input().split()))
-        print(compute_height(n, parents))
+        print(parents)
+        #print(compute_height(n, parents))
 
     if check == 'F':
         path = os.getcwd() + '/test'
