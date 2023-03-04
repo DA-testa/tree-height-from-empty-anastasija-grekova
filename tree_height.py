@@ -17,7 +17,7 @@ def compute_height(n, parents):
 
 def main():
     check = input()
-
+    print(check)
     if check == "I":
         a = input()
         print(a)
