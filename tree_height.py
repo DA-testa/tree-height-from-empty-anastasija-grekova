@@ -17,7 +17,8 @@ def compute_height(n, parents):
 
 def main():
     check = input()
-    check = check.replace("\n", "")
+    check = check.replace("\r","")
+    check = check.replace("\n","")
     print("-"+check+"-")
     if check == 'I':
         print("in")
