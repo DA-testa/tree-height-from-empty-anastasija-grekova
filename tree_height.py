@@ -17,12 +17,8 @@ def compute_height(n, parents):
 
 def main():
     check = input()
-    print(check)
-    if check == "I":
-        print("in")
-        a = input()
-        print(a)
-        quit()
+    #print(check)
+    if check == 'I':
         n = int(input())
         parents = list(map(int, input().split()))
         print(compute_height(n, parents))
