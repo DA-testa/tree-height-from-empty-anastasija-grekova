@@ -26,12 +26,12 @@ def main():
         file_path = f"{path}/{file}"
     #print(file)
         #if 'a' in file:
-            '''with open(file_path, "r", encoding="utf-8-sig") as f:
-                lines = f.readlines()
-                newLines = []
-                for x in lines:
-                    newLines.append(x.replace("\n", ""))
-                print(int(newLines[0]))'''
+        #'''with open(file_path, "r", encoding="utf-8-sig") as f:
+        #        lines = f.readlines()
+        #        newLines = []
+        #        for x in lines:
+        #            newLines.append(x.replace("\n", ""))
+        #        print(int(newLines[0]))'''
         #    quit()
                 
         #else:
