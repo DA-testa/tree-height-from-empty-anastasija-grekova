@@ -20,6 +20,7 @@ def main():
     if check == "I":
         n = int(input())
         parents = list(map(int, input().split()))
+        print(compute_height(n, parents))
 
     if check == 'F':
         path = os.getcwd() + '/test'
@@ -53,42 +54,12 @@ def main():
                 parents = [int(i) for i in parents]
                 #for i in enumerate(parents):
                 #    parents[i] = int(parents[i])
-                #print(parents)
-                    #for line in lines:
-                    #    count += 1
-                    #    n = lines.format(1, line.strip())
-                    #    parents = lines.format
-                    #if countLines == 1 :
-                #        print(f.readline())
-                        
-                    #    n = f.readline;
-                    #    print(n)
-                #    else:
-                        #print(f.readline())
-                #        parents = f.readline()
-                #    countLines += 1
-        #else:
-        #    print("sorry!")
+               
     
-    print(compute_height(n, parents))
-    
-        #print(text)
-
-
-
-
-
-
-
-    # implement input form keyboard and from files
-    
+        print(compute_height(n, parents))
+  
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
-    
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
-    #pass
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
