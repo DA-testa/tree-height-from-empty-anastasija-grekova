@@ -17,12 +17,42 @@ def compute_height(n, parents):
 
 def main():
     check = input()
-    if check == "I":
-        n = int(input())
-        parents = list(map(int, input().split()))
+
+
+    path = os.getcwd() + '/test'
+    os.chdir(path)
+    
+    for file in os.listdir():
+        file_path = f"{path}/{file}"
+        
+    if 'a' in file:
+        with open(file_path, "r", encoding="utf-8-sig") as f:
+            lines = f.readlines()
+            newLines = []
+            for x in lines:
+                newLines.append(x.replace("\n", ""))
+            print(int(newLines[0]))
+            quit()
+                
+    else:
+        with open(file_path, "r", encoding="utf-8-sig") as f:
+            lines = f.readlines()
+            newLines = []
+            for x in lines:
+                newLines.append(x.replace("\n", ""))
+            n = int(newLines[0])
+            parents = newLines[1].split()
+            parents = [int(i) for i in parents]
+
         print(compute_height(n, parents))
 
-    if check == 'F':
+
+    #if check == "I":
+    #    n = int(input())
+    #    parents = list(map(int, input().split()))
+    #    print(compute_height(n, parents))
+
+    '''if check == 'F':
         path = os.getcwd() + '/test'
         os.chdir(path)
         file_name = input()
@@ -37,11 +67,7 @@ def main():
                 quit()
                 
         else:
-            #file_path = f"{path}/{file_name}"
-            #print(file_path)
             with open(file_path, "r", encoding="utf-8-sig") as f:
-                #    data = f.read()
-                #for line in lines:
                 lines = f.readlines()
                 newLines = []
                 for x in lines:
@@ -56,7 +82,7 @@ def main():
                 #    parents[i] = int(parents[i])
                
     
-        print(compute_height(n, parents))
+        print(compute_height(n, parents))'''
   
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
