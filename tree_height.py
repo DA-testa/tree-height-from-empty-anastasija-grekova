@@ -25,12 +25,18 @@ def main():
         path = os.getcwd() + '/test'
         os.chdir(path)
         file_name = input()
-
+        file_path = f"{path}/{file_name}"
         if 'a' in file_name:
-            print("error")
-            quit()
+            with open(file_path, "r", encoding="utf-8-sig") as f:
+                lines = f.readlines()
+                newLines = []
+                for x in lines:
+                    newLines.append(x.replace("\n", ""))
+                print(int(newLines[0]))
+                quit()
+                
         else:
-            file_path = f"{path}/{file_name}"
+            #file_path = f"{path}/{file_name}"
             #print(file_path)
             with open(file_path, "r", encoding="utf-8-sig") as f:
                 #    data = f.read()
@@ -69,6 +75,13 @@ def main():
         #print(text)
 
 
+
+
+
+
+
+    # implement input form keyboard and from files
+    
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
