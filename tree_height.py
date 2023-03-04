@@ -25,25 +25,25 @@ def main():
     for file in os.listdir():
         file_path = f"{path}/{file}"
     #print(file)
-        #if 'a' in file:
-        #'''with open(file_path, "r", encoding="utf-8-sig") as f:
-        #        lines = f.readlines()
-        #        newLines = []
-        #        for x in lines:
-        #            newLines.append(x.replace("\n", ""))
-        #        print(int(newLines[0]))'''
-        #    quit()
+        if 'a' in file:
+            with open(file_path, "r", encoding="utf-8-sig") as f:
+                lines = f.readlines()
+                newLines = []
+                for x in lines:
+                    newLines.append(x.replace("\n", ""))
+                print(int(newLines[0]))
+            quit()
                 
-        #else:
-        with open(file_path, "r", encoding="utf-8-sig") as f:
-            lines = f.readlines()
-            newLines = []
-            for x in lines:
-                newLines.append(x.replace("\n", ""))
-            n = int(newLines[0])
-            parents = newLines[1].split()
-            parents = [int(i) for i in parents]
-        print(compute_height(n, parents))
+        else:
+            with open(file_path, "r", encoding="utf-8-sig") as f:
+                lines = f.readlines()
+                newLines = []
+                for x in lines:
+                    newLines.append(x.replace("\n", ""))
+                n = int(newLines[0])
+                parents = newLines[1].split()
+                parents = [int(i) for i in parents]
+                print(compute_height(n, parents))
 
 
     #if check == "I":
