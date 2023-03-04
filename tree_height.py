@@ -19,6 +19,7 @@ def main():
     check = input()
     print(check)
     if check == "I":
+        print("in")
         a = input()
         print(a)
         quit()
