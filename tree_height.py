@@ -16,38 +16,34 @@ def compute_height(n, parents):
     return max(max_height)
 
 def main():
-#    check = input()
+    check = input()
 
-#    if check == "I":
-    n = int(input())
-    parents = list(map(int, input().split()))
-    print(compute_height(n, parents))
+    if check == "I":
+        a = input()
+        print(a)
+        quit()
+        n = int(input())
+        parents = list(map(int, input().split()))
+        print(compute_height(n, parents))
 
-#    if check == 'F':
-#        path = os.getcwd() + '/test'
-#        os.chdir(path)
-#        file_name = input()
-#        file_path = f"{path}/{file_name}"
-#        if 'a' in file_name:
-#            with open(file_path, "r", encoding="utf-8-sig") as f:
-#                lines = f.readlines()
-#                newLines = []
-#                for x in lines:
-#                    newLines.append(x.replace("\n", ""))
-#                print(int(newLines[0]))
-#                quit()
-                
-#        else:
-#            with open(file_path, "r", encoding="utf-8-sig") as f:
-#                lines = f.readlines()
-#                newLines = []
-#                for x in lines:
-#                    newLines.append(x.replace("\n", ""))
-#                n = int(newLines[0])
-#                parents = newLines[1].split()
-#                parents = [int(i) for i in parents] 
-#        print(compute_height(n, parents))
-  
+    if check == 'F':
+        path = os.getcwd() + '/test'
+        os.chdir(path)
+        file_name = input()
+        if 'a' in file_name:
+            print("error")
+            quit()        
+        else:
+            file_path = f"{path}/{file_name}"
+            with open(file_path, "r", encoding="utf-8-sig") as f:
+                lines = f.readlines()
+                newLines = []
+                for x in lines:
+                    newLines.append(x.replace("\n", ""))
+                n = int(newLines[0])
+                parents = newLines[1].split()
+                parents = [int(i) for i in parents] 
+                print(compute_height(n, parents))  
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
 
