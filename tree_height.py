@@ -11,12 +11,14 @@ def compute_height(n, parents):
     out_queue=queue.Queue()
 
     #max_height = [1] * n
-    t1=[1] * n
+    #t1=[1] * n
     for i, j in enumerate(parents):
-        t1[i]=threading.Thread(target=depth, args=(j, parents, out_queue))
-        t1[i].start()
+    #    t1[i]=threading.Thread(target=depth, args=(j, parents, out_queue))
+    #    t1[i].start()
        # t1[i].join()
-       # depth(j, parents, out_queue)
+        result = depth(j, parents, out_queue)
+        if result == n:
+            return result
         #while j != -1:
         #    max_height[i] += 1
         #    j = parents[j]
@@ -33,7 +35,10 @@ def depth(j, parents, out_queue):
     while j != -1:
         element_depth += 1
         j = parents[j]
+        #if element_depth == len(parents)
+
     out_queue.put(element_depth)
+    return element_depth
 
 def main():
     check = input()
@@ -43,7 +48,6 @@ def main():
     if check == 'I':
         n = int(input())
         parents = list(map(int, input().split()))
-        
         print(compute_height(n, parents))
 
     if check == 'F':
@@ -76,7 +80,7 @@ def main():
 # so raise it here for this problem. Note that to take advantage
 # of bigger stack, we have to launch the computation in a new thread.
 sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**27)   # new thread will get stack of such size
+threading.stack_size(2**30)   # new thread will get stack of such size
 threading.Thread(target=main).start()
 #main()
 # print(numpy.array([1,2,3]))
