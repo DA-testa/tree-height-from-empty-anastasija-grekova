@@ -1,20 +1,38 @@
 # python3
 
 import sys
-import threading
+import threading, queue
 #import csv
 #import numpy
 import os
 
 
 def compute_height(n, parents):
-    max_height = [1] * n
+    out_queue=queue.Queue()
+
+    #max_height = [1] * n
     for i, j in enumerate(parents):
-        while j != -1:
-            max_height[i] += 1
-            j = parents[j]
+        t1=threading.Thread(target=depth, args=(j, parents, out_queue))
+        t1.start()
+        t1.join()
+       # depth(j, parents, out_queue)
+        #while j != -1:
+        #    max_height[i] += 1
+        #    j = parents[j]
     #out_queue.put(max)
-    return max(max_height)
+    max_value = 0
+    for i in out_queue.queue:
+        if max_value < i:
+            max_value = i
+        
+    return max_value
+
+def depth(j, parents, out_queue):
+    element_depth = 1
+    while j != -1:
+        element_depth += 1
+        j = parents[j]
+    out_queue.put(element_depth)
 
 def main():
     check = input()
@@ -48,7 +66,7 @@ def main():
                 #t1=threading.Thread(target=compute_height, args=(n, parents, out_queue))
                 #t1.start()
                 #t1.join()
-                
+            #out_queue=queue.Queue()    
             print(compute_height(n, parents))  
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
@@ -57,7 +75,7 @@ def main():
 # so raise it here for this problem. Note that to take advantage
 # of bigger stack, we have to launch the computation in a new thread.
 sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**30)   # new thread will get stack of such size
+threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
 #main()
 # print(numpy.array([1,2,3]))
