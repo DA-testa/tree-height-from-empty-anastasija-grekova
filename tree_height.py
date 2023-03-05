@@ -11,10 +11,11 @@ def compute_height(n, parents):
     out_queue=queue.Queue()
 
     #max_height = [1] * n
+    t1=[1] * n
     for i, j in enumerate(parents):
-        t1=threading.Thread(target=depth, args=(j, parents, out_queue))
-        t1.start()
-        t1.join()
+        t1[i]=threading.Thread(target=depth, args=(j, parents, out_queue))
+        t1[i].start()
+        t1[i].join()
        # depth(j, parents, out_queue)
         #while j != -1:
         #    max_height[i] += 1
