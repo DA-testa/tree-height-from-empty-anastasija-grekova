@@ -2,7 +2,6 @@
 
 import sys
 import threading
-#import csv
 #import numpy
 import os
 
